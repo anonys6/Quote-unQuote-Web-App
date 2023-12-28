@@ -5,6 +5,9 @@ html {
     background-color: #1b1924;
     font-family: 'Inter', sans-serif;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #hero {
