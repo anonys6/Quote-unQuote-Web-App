@@ -19,12 +19,17 @@ html {
 }
 
 .image-box {
-    font-family: 'Josefin Sans', sans-serif;
-
+    padding-top: 40px;
 }
 
 .image-box img {
-    width: 60%;
+    width: 40%;
+}
+
+.image-box h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.7em;
+    margin: 15px 0 15px;
 }
 
 #endorsement-list {
