@@ -93,7 +93,7 @@ btnPublish.addEventListener("click", function () {
     let fromValue = fromInput.value;
     let toValue = toInput.value;
 
-    if (endorsementValue == "") {
+    if (endorsementValue === "" && fromValue === "" && toValue === "") {
         return;
     }
 
@@ -136,25 +136,21 @@ function clearEndorsementList() {
 }
 
 function appendEndorsementToEndorsementList(endorsement) {
-    // let endorsementID = endorsement[0];
-    // let endorsementValue = endorsement[1];
     let endorsementID = endorsement[0];
     let endorsementObject = endorsement[1]
-    // let endorsementText = endorsementID[endorsementValue];
-    // let endorsementFrom = endorsementID[fromValue];
-    // let endorsementTo = endorsementID[toValue];
+
     let endorsementText = endorsementObject.endorsementText;
     let endorsementFrom = endorsementObject.endorsementFrom;
     let endorsementTo = endorsementObject.endorsementTo;
 
-    // console.log(endorsementText, endorsementFrom, endorsementTo);
     console.log(endorsementObject)
 
-
     let newLi = document.createElement("li");
-    newLi.innerHTML = `<span class="list-from">To ${endorsementFrom}</span><br>
+    newLi.innerHTML = `
+        <span class="list-from">To ${endorsementFrom}</span><br>
         ${endorsementText}<br>
-        <span class="list-to">From ${endorsementTo}</span>`;
+        <span class="list-to">From ${endorsementTo}</span>
+    `;
 
     newLi.addEventListener("click", function () {
         let exactLocationOfEndorsementInDB = ref(database, `fromList/${endorsementID}`);
