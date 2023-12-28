@@ -2,7 +2,7 @@
 
 This is a simple web application that allows users to publish endorsements. The endorsements are stored in a Firebase real-time database and are displayed in real-time on the page.
 
-You can view the live application [here](https://anonys6.github.io/Quote-unQuote-Web-App/){:target="_blank"}.
+You can view the live application [here](https://anonys6.github.io/Quote-unQuote-Web-App/).
 
 ## Technologies Used
 
@@ -39,3 +39,12 @@ const firebaseConfig = {
   messagingSenderId: "your-messaging-sender-id",
   appId: "your-app-id"
 };
+
+After adding your Firebase configuration, you can open index.html in your browser to use the application.
+
+Note
+This project is still in development. Error handling and input validation will be added in the future.
+
+```
+
+Please replace the firebaseConfig object with your own Firebase configuration.
