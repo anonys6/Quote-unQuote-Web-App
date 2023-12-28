@@ -16,7 +16,7 @@ html {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 20px 15px;
 }
 
 .image-box {
