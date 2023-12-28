@@ -44,7 +44,8 @@ html {
     resize: none;
 }
 
-#btn-publish {
+#btn-publish,
+#btn-publish:link {
     background: #28A9F1;
     color: #04131C;
     border: 1px solid #28A9F1;
@@ -55,7 +56,8 @@ html {
     transition: .1s all ease-in-out;
 }
 
-#btn-publish:hover {
+#btn-publish:hover,
+#btn-publish:active {
     background-color: #04131C;
     color: #28A9F1;
 }
