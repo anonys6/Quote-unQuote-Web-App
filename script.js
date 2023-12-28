@@ -29,36 +29,16 @@ btnPublish.addEventListener("click", function () {
     clearFields();
 })
 
-function fromData() {
-    onValue(fromListInDB, function (snapshot) {
-        if (snapshot.exists()) {
-            let fromArray = Object.entries(snapshot.val());
-            return fromArray;
-        } else {
-            endorsementList.innerHTML = "No endorsement here yet...";
-        }
-    })
-
-    return fromArray;
-}
-
 onValue(endorsementListInDB, function (snapshot) {
     if (snapshot.exists()) {
         let endorsementArray = Object.entries(snapshot.val());
-        let fromArray = fromData();
 
         clearEndorsementList();
 
         for (let i = endorsementArray.length - 1; i >= 0; i--) {
             let currentEndorsement = endorsementArray[i];
-            let currentEndorsementID = currentEndorsement[0];
-            let currentEndorsementValue = currentEndorsement[1];
 
-            let currentFrom = fromArray[i];
-            let currentFromID = currentFrom[0];
-            let currentFromValue = currentFrom[1];
-
-            appendEndorsementToEndorsementList(currentEndorsement, currentFrom);
+            appendEndorsementToEndorsementList(currentEndorsement);
         }
     } else {
         endorsementList.innerHTML = "No endorsement here yet...";
@@ -77,11 +57,9 @@ function clearEndorsementList() {
 function appendEndorsementToEndorsementList(endorsement, from) {
     let endorsementID = endorsement[0];
     let endorsementValue = endorsement[1];
-    let fromID = from[0];
 
     let newLi = document.createElement("li");
     newLi.textContent = endorsementValue;
-    newLi.innerHTML = `${fromID}<br>${newLi.textContent}<br>To Harry`
 
     newLi.addEventListener("click", function () {
         let exactLocationOfEndorsementInDB = ref(database, `endorsementList/${endorsementID}`);
