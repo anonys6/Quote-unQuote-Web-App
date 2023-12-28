@@ -1,0 +1,39 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1924;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+}
+
+#hero {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.image-box {
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.image-box img {
+    width: 60%;
+}
+
+#endorsement-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#endorsement-list li {
+    background-color: #fff;
+    color: #1B1924;
+}
