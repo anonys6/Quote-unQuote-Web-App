@@ -99,3 +99,18 @@ html {
     color: #1B1924;
     padding: 10px 15px 15px 15px;
 }
+
+.list-from,
+.list-to {
+    font-weight: 700;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.list-from {
+    margin-bottom: 10px;
+}
+
+.list-to {
+    margin-top: 10px;
+}
