@@ -17,8 +17,11 @@ const endorsementList = document.getElementById("endorsement-list");
 btnPublish.addEventListener("click", function () {
     let inputValue = endorsementInput.value;
 
+    if (inputValue == "") {
+        return;
+    }
+
     push(endorsementListInDB, inputValue);
-    // endorsementList.innerHTML += `<li>${endorsementInput.value}</li>`
 
     clearInputField();
 })
