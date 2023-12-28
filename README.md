@@ -2,7 +2,7 @@
 
 This is a simple web application that allows users to publish endorsements. The endorsements are stored in a Firebase real-time database and are displayed in real-time on the page.
 
-You can view the live application [here](https://anonys6.github.io/Quote-unQuote-Web-App/).
+You can view the live application [here](https://anonys6.github.io/Quote-unQuote-Web-App/){:target="_blank"}.
 
 ## Technologies Used
 
