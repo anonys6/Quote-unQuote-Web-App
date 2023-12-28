@@ -32,6 +32,39 @@ html {
     margin: 15px 0 15px;
 }
 
+#input-endorsement {
+    background-color: #444059;
+    border: none;
+    border-radius: 10px;
+    height: 120px;
+    padding: 15px 20px;
+    outline: none;
+    color: #8F8F8F;
+    margin-bottom: 15px;
+    resize: none;
+}
+
+#btn-publish {
+    background: #28A9F1;
+    color: #04131C;
+    border: 1px solid #28A9F1;
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 1.5em;
+    border-radius: 10px;
+    transition: .1s all ease-in-out;
+}
+
+#btn-publish:hover {
+    background-color: #04131C;
+    color: #28A9F1;
+}
+
+.endorsement-header {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+}
+
 #endorsement-list {
     text-align: left;
     list-style: none;
@@ -44,4 +77,5 @@ html {
 #endorsement-list li {
     background-color: #fff;
     color: #1B1924;
+    padding: 15px 15px 20px 15px;
 }
