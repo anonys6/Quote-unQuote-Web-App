@@ -8,27 +8,44 @@ const appSetting = {
 const app = initializeApp(appSetting);
 const database = getDatabase(app);
 const endorsementListInDB = ref(database, "endorsementList");
+const fromListInDB = ref(database, "fromList");
 
 
 const btnPublish = document.getElementById("btn-publish");
 const endorsementInput = document.getElementById("input-endorsement");
 const endorsementList = document.getElementById("endorsement-list");
+const fromInput = document.getElementById("from-input");
 
 btnPublish.addEventListener("click", function () {
-    let inputValue = endorsementInput.value;
+    let endorsementValue = endorsementInput.value;
+    let fromValue = fromInput.value;
 
-    if (inputValue == "") {
+    if (endorsementValue == "" && fromValue == "") {
         return;
     }
 
-    push(endorsementListInDB, inputValue);
+    push(endorsementListInDB, endorsementValue);
 
-    clearInputField();
+    clearFields();
 })
+
+function fromData() {
+    onValue(fromListInDB, function (snapshot) {
+        if (snapshot.exists()) {
+            let fromArray = Object.entries(snapshot.val());
+            return fromArray;
+        } else {
+            endorsementList.innerHTML = "No endorsement here yet...";
+        }
+    })
+
+    return fromArray;
+}
 
 onValue(endorsementListInDB, function (snapshot) {
     if (snapshot.exists()) {
         let endorsementArray = Object.entries(snapshot.val());
+        let fromArray = fromData();
 
         clearEndorsementList();
 
@@ -37,27 +54,34 @@ onValue(endorsementListInDB, function (snapshot) {
             let currentEndorsementID = currentEndorsement[0];
             let currentEndorsementValue = currentEndorsement[1];
 
-            appendEndorsementToEndorsementList(currentEndorsement);
+            let currentFrom = fromArray[i];
+            let currentFromID = currentFrom[0];
+            let currentFromValue = currentFrom[1];
+
+            appendEndorsementToEndorsementList(currentEndorsement, currentFrom);
         }
     } else {
         endorsementList.innerHTML = "No endorsement here yet...";
     }
 })
 
-function clearInputField() {
+function clearFields() {
     endorsementInput.value = "";
+    fromInput.value = "";
 }
 
 function clearEndorsementList() {
     endorsementList.innerHTML = "";
 }
 
-function appendEndorsementToEndorsementList(endorsement) {
+function appendEndorsementToEndorsementList(endorsement, from) {
     let endorsementID = endorsement[0];
     let endorsementValue = endorsement[1];
+    let fromID = from[0];
 
     let newLi = document.createElement("li");
     newLi.textContent = endorsementValue;
+    newLi.innerHTML = `${fromID}<br>${newLi.textContent}<br>To Harry`
 
     newLi.addEventListener("click", function () {
         let exactLocationOfEndorsementInDB = ref(database, `endorsementList/${endorsementID}`);

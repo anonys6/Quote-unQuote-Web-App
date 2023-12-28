@@ -45,6 +45,23 @@ html {
     resize: none;
 }
 
+.user-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.user-box input {
+    width: 50%;
+    background-color: #444059;
+    border: none;
+    border-radius: 8px;
+    height: 45px;
+    outline: none;
+    color: #8F8F8F;
+    text-align: center;
+}
+
 #btn-publish,
 #btn-publish:link {
     background: #28A9F1;
